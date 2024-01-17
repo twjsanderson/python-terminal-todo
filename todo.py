@@ -1,5 +1,5 @@
-from loader import Loader
 from datetime import date
+from loader import Loader
 
 class Todo(Loader):
     def __init__(self):
