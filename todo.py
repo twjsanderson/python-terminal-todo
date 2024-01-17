@@ -45,7 +45,8 @@ class Todo:
         delete: Delete an existing task by id
         complete: Set a task as COMPLETE by id
         update: Update the properties of a task by id
-        exit: Return to root application command line 
+        exit: Return to root application command line
+        
         -help: View all avaiable commands
         ''')
         self.run()
@@ -255,7 +256,6 @@ class Todo:
             self.display(index)
             print(f'Todo #{index} successfully updated')
             self.run()
-
 
 if __name__ == '__main__':
     Todo().run()
