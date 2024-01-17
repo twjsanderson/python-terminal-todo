@@ -17,6 +17,6 @@ Enter any of the command keys (add, get, etc.) below to interact with the applic
 **delete**: Delete an existing task by id\
 **complete**: Set a task as COMPLETE by id\
 **update**: Update the properties of a task by id\
-**exit**: Return to the application root (does not work in all inputs)\
+**exit**: Return to the application root (does not work for all inputs)\
 **-help**: View all avaiable commands
 
