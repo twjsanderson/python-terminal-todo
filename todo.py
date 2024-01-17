@@ -2,7 +2,6 @@ from loader import Loader
 from datetime import date
 
 class Todo(Loader):
-    file_name = 'todo.txt'
     def __init__(self):
         self.todos = {}
         self.cmds = self.set_cmds()
@@ -29,7 +28,7 @@ class Todo(Loader):
         --------------------------------------------------------
         add: Add a new task
         get: View an existing task by id
-        get: View all existing todos
+        get_all: View all existing todos
         delete: Delete an existing task by id
         complete: Set a task as COMPLETE by id
         update: Update the properties of a task by id
