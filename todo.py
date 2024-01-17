@@ -1,27 +1,15 @@
+from loader import Loader
 from datetime import date
-import json
-import os
 
-class Todo:
+class Todo(Loader):
     file_name = 'todo.txt'
     def __init__(self):
         self.todos = {}
         self.cmds = self.set_cmds()
+        super().__init__()
     
     def run(self):
         return self.get_user_input()
-    
-    def load_todos(self):
-        if os.stat(self.file_name).st_size != 0:
-            todo_file = open(self.file_name, "r")
-            todos = json.load(todo_file)
-            self.todos = todos
-
-    def upload_todos(self):
-        todo_file = open("todo.txt", "w")
-        todo_json = json.dumps(self.todos, indent=4, sort_keys=True, default=str)
-        todo_file.write(todo_json)
-        todo_file.close()
 
     def set_cmds(self):
         return {
@@ -31,7 +19,7 @@ class Todo:
             'delete': self.delete,
             'complete': self.complete,
             'update': self.update,
-            'exit': self.run,
+            'home': self.run,
             '-help': self.show_cmds
         }
     
@@ -45,8 +33,8 @@ class Todo:
         delete: Delete an existing task by id
         complete: Set a task as COMPLETE by id
         update: Update the properties of a task by id
-        exit: Return to root application command line
-        
+        home: Return to root application command line
+
         -help: View all avaiable commands
         ''')
         self.run()
@@ -103,7 +91,7 @@ class Todo:
             self.run()
         
         index = input('Todo id > ')
-        if index == 'exit':
+        if index == 'home':
             self.run()
         elif index in self.todos:
             self.display(index)
@@ -145,7 +133,7 @@ class Todo:
         '''
         self.load_todos()
         index = input('Todo id > ')
-        if index == 'exit':
+        if index == 'home':
             self.run()
         elif index in self.todos and self.todos[index]['status'] == 'INCOMPLETE':
             self.display(index)
@@ -165,7 +153,7 @@ class Todo:
         '''
         self.load_todos()
         index = input('Todo id > ')
-        if index == 'exit':
+        if index == 'home':
             self.run()
         elif index in self.todos:
             self.display(index)
@@ -199,7 +187,7 @@ class Todo:
             self.run()
         
         index = input('Todo id > ')
-        if index == 'exit':
+        if index == 'home':
             self.run()
         elif index in self.todos:
             new_todo = {
