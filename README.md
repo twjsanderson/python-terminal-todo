@@ -18,5 +18,5 @@ Enter any of the command keys (add, get, etc.) below to interact with the applic
 **complete**: Set a task as COMPLETE by id\
 **update**: Update the properties of a task by id\
 **exit**: Return to the application root (does not work in all inputs)\
-**-help**: View all avaiable commands\
+**-help**: View all avaiable commands
 
