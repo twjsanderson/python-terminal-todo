@@ -1,5 +1,8 @@
 # python-terminal-todo
-A simple cmd line todo app written in python.
+A simple, lightweight cmd line todo app written in python, with persistent data.
+
+The application is run from your command line (zsh, bash, etc.) and persists\
+your todo list in a **todo.txt** file in the root folder. 
 
 # Dependencies
 - Python3
