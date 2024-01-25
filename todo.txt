@@ -2,7 +2,55 @@
     "1": {
         "creation_date": "2024-01-16",
         "due_date": "2024-01-17",
+        "status": "COMPLETE",
+        "task": "v1 of resume, apply to all jobs through references and some extras, create excel doc of all applications"
+    },
+    "2": {
+        "creation_date": "2024-01-16",
+        "due_date": "2024-01-17",
+        "status": "COMPLETE",
+        "task": "Take pictures of Bus"
+    },
+    "3": {
+        "creation_date": "2024-01-16",
+        "due_date": "2024-01-16",
+        "status": "COMPLETE",
+        "task": "Push todo app to Github, with fake todo.txt data, and README"
+    },
+    "4": {
+        "creation_date": "2024-01-16",
+        "due_date": "2024-01-18",
+        "status": "COMPLETE",
+        "task": "Get super basic POC of junior hockey promotion predictor running"
+    },
+    "5": {
+        "creation_date": "2024-01-17",
+        "due_date": "2024-01-17",
+        "status": "COMPLETE",
+        "task": "Submit Heather's Benefits!"
+    },
+    "6": {
+        "creation_date": "2024-01-17",
+        "due_date": "2024-01-17",
+        "status": "COMPLETE",
+        "task": "Update resume on advice from Dave Doyle and Tim"
+    },
+    "7": {
+        "creation_date": "2024-01-19",
+        "due_date": "2024-01-20",
+        "status": "COMPLETE",
+        "task": "Complete 3 LinkedList leetcode questions"
+    },
+    "8": {
+        "creation_date": "2024-01-19",
+        "due_date": "2024-02-10",
         "status": "INCOMPLETE",
-        "task": "Fake task!"
+        "task": "update all ML data to include array of teams"
+    },
+    "9": {
+        "creation_date": "2024-01-21",
+        "due_date": "2024-01-25",
+        "status": "COMPLETE",
+        "task": "Add show_complete & show_incomplete to TODO app"
     }
 }

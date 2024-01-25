@@ -15,6 +15,8 @@ class Todo(Loader):
             'add': self.add,
             'get': self.get,
             'get_all': self.get_all,
+            'get_complete': self.get_complete,
+            'get_incomplete': self.get_incomplete,
             'delete': self.delete,
             'complete': self.complete,
             'update': self.update,
@@ -29,6 +31,8 @@ class Todo(Loader):
         add: Add a new task
         get: View an existing task by id
         get_all: View all existing todos
+        get_complete: View all completed todos
+        get_incomplete: View all incomplete todos
         delete: Delete an existing task by id
         complete: Set a task as COMPLETE by id
         update: Update the properties of a task by id
@@ -111,6 +115,35 @@ class Todo(Loader):
             due_date: {todo['due_date']}
             status: {todo['status']}
         ''')
+    
+    def get_status(self, status):
+        '''
+            Get tasks from todo list based status
+        '''
+        self.load_todos()
+        length = len(self.todos)
+        one_complete = False
+        if length:
+            for i in range(length):
+                str_index = str(i + 1)
+                if self.todos[str_index]['status'] == status:
+                    self.display(str_index)
+                    one_complete = True
+            if one_complete == False:
+                print('No todos to display')
+        self.run()
+    
+    def get_complete(self):
+        '''
+            Get only COMPLETE tasks from todo list based status
+        '''
+        return self.get_status('COMPLETE')
+    
+    def get_incomplete(self):
+        '''
+            Get only INCOMPLETE tasks from todo list
+        '''
+        return self.get_status('INCOMPLETE')
         
     def get_all(self):
         '''
