@@ -17,6 +17,7 @@ class Todo(Loader):
             'get_all': self.get_all,
             'get_complete': self.get_complete,
             'get_incomplete': self.get_incomplete,
+            'get_overdue': self.get_overdue,
             'delete': self.delete,
             'complete': self.complete,
             'update': self.update,
@@ -33,6 +34,7 @@ class Todo(Loader):
         get_all: View all existing todos
         get_complete: View all completed todos
         get_incomplete: View all incomplete todos
+        get_overdue: View all overdue todos
         delete: Delete an existing task by id
         complete: Set a task as COMPLETE by id
         update: Update the properties of a task by id
@@ -116,6 +118,26 @@ class Todo(Loader):
             status: {todo['status']}
         ''')
     
+    def get_overdue(self):
+        '''
+            Get overdue tasks from todo list based due_date
+        '''
+        self.load_todos()
+        length = len(self.todos)
+        one_overdue = False
+        if length:
+            for i in range(length):
+                str_index = str(i + 1)
+                status = self.todos[str_index]['status']
+                due_date_list = self.todos[str_index]['due_date'].split('-')
+                due_date = date(int(due_date_list[0]), int(due_date_list[1]), int(due_date_list[2]))
+                if date.today() > due_date and status == 'INCOMPLETE':
+                    self.display(str_index)
+                    one_overdue = True
+            if one_overdue == False:
+                print('No todos to display')
+        self.run()
+
     def get_status(self, status):
         '''
             Get tasks from todo list based status
