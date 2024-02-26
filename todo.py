@@ -129,11 +129,12 @@ class Todo(Loader):
             for i in range(length):
                 str_index = str(i + 1)
                 status = self.todos[str_index]['status']
-                due_date_list = self.todos[str_index]['due_date'].split('-')
-                due_date = date(int(due_date_list[0]), int(due_date_list[1]), int(due_date_list[2]))
-                if date.today() > due_date and status == 'INCOMPLETE':
-                    self.display(str_index)
-                    one_overdue = True
+                if self.todos[str_index]['due_date']:
+                    due_date_list = self.todos[str_index]['due_date'].split('-')
+                    due_date = date(int(due_date_list[0]), int(due_date_list[1]), int(due_date_list[2]))
+                    if date.today() > due_date and status == 'INCOMPLETE':
+                        self.display(str_index)
+                        one_overdue = True
             if one_overdue == False:
                 print('No todos to display')
         self.run()
